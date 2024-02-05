@@ -44,5 +44,30 @@
 			</plugin>
 		</plugins>
 	</build>
+	 <distributionManagement>
+		 	<repository>
+  <id>feeda</id>
+  <url>https://win-tk9pm7ngo7b/eddar/prom/_packaging/feeda/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+
+	 </distributionManagement>
+<repositories>
+	<repository>
+  <id>feeda</id>
+  <url>https://win-tk9pm7ngo7b/eddar/prom/_packaging/feeda/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</repositories>
 
 </project>
