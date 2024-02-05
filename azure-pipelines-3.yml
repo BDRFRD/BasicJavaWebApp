@@ -24,7 +24,7 @@ steps:
     jdkFile: '$(build.sourcesdirectory)\jdk-21_windows-x64_bin.zip'
     jdkDestinationDirectory: '$(agent.toolsDirectory)/jdk21'
 
-steps:
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
