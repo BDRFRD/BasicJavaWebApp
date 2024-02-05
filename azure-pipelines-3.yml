@@ -1,13 +1,28 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - main
 
 pool:
   name: pooli
+
+steps:
+
+- powershell: |
+   $source = "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.zip"
+   $destination = "$(build.sourcesdirectory)\jdk-21_windows-x64_bin.zip"
+   $client = new-object System.Net.WebClient 
+   $cookie = "oraclelicense=accept-securebackup-cookie"
+   $client.Headers.Add([System.Net.HttpRequestHeader]::Cookie, $cookie) 
+   $client.downloadFile($source, $destination)
+  displayName: 'PowerShell Script'
+
+- task: JavaToolInstaller@0
+  displayName: 'Use Java 21'
+  inputs:
+    versionSpec: 21
+    jdkArchitectureOption: x64
+    jdkSourceOption: LocalDirectory
+    jdkFile: '$(build.sourcesdirectory)\jdk-21_windows-x64_bin.zip'
+    jdkDestinationDirectory: '$(agent.toolsDirectory)/jdk21'
 
 steps:
 - task: Maven@3
