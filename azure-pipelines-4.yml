@@ -10,6 +10,23 @@ pool:
   name: pooli
 
 steps:
+- powershell: |
+   $source = "https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip"
+   $destination = "$(build.sourcesdirectory)\jdk-17_windows-x64_bin.zip"
+   $client = new-object System.Net.WebClient 
+   $cookie = "oraclelicense=accept-securebackup-cookie"
+   $client.Headers.Add([System.Net.HttpRequestHeader]::Cookie, $cookie) 
+   $client.downloadFile($source, $destination)
+  displayName: 'PowerShell Script'
+
+- task: JavaToolInstaller@0
+  displayName: 'Use Java 17'
+  inputs:
+    versionSpec: 17
+    jdkArchitectureOption: x64
+    jdkSourceOption: LocalDirectory
+    jdkFile: '$(build.sourcesdirectory)\jdk-17_windows-x64_bin.zip'
+    jdkDestinationDirectory: '$(agent.toolsDirectory)/jdk71'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
