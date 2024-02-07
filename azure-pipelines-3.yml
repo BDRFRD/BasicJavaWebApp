@@ -32,4 +32,4 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.21'
     jdkArchitectureOption: 'x64'
-    goals: 'clean package -U -X deploy -Dhttps.protocols=TLSv1.2 -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 -Dmaven.wagon.http.retryHandler.requestSentEnabled=true'
+    goals: 'clean package deploy'
