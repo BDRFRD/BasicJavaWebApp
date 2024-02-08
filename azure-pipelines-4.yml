@@ -23,7 +23,7 @@ steps:
 - task: MavenAuthenticate@0
   displayName: maven ahtnification
   inputs:
-   artifactsFeeds: feeda
+   artifactsFeeds: unfeed
     
 - task: JavaToolInstaller@0
   displayName: 'Use Java 17'
@@ -40,7 +40,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.17'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
+    publishJUnitResults: false
     mavenAuthenticateFeed: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: ' clean  -e  deploy'
+    goals: 'deploy'
