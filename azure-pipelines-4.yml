@@ -43,4 +43,4 @@ steps:
     publishJUnitResults: true
     mavenAuthenticateFeed: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: ' -X -e  deploy'
+    goals: ' clean  -e  deploy'
