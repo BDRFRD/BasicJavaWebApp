@@ -23,7 +23,7 @@ steps:
 - task: MavenAuthenticate@0
   displayName: maven ahtnification
   inputs:
-   artifactsFeeds: unfeed
+   artifactsFeeds: unfeed1
     
 - task: JavaToolInstaller@0
   displayName: 'Use Java 17'
