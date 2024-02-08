@@ -47,7 +47,7 @@
 	<distributionManagement>
 <repository>
   <id>unfeed</id>
-  <url>http://win-tk9pm7ngo7b/eddar/prom/_packaging/unfeed/maven/v1</url>
+  <url>http://win-tk9pm7ngo7b/eddar/prom/_packaging/unfeed1/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
@@ -60,7 +60,7 @@
 	<repositories>
 <repository>
   <id>unfeed</id>
-  <url>http://win-tk9pm7ngo7b/eddar/prom/_packaging/unfeed/maven/v1</url>
+  <url>http://win-tk9pm7ngo7b/eddar/prom/_packaging/unfeed1/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
